@@ -1,0 +1,60 @@
+[
+  { "name": "01_templates_list", "url": "/visibilidade/templates", "settleMs": 2800, "waitMs": 1000 },
+
+  { "name": "02_editor_canvas", "url": "/visibilidade/templates/9b965ff9-c070-453a-9546-b21fc7ff3bb3", "settleMs": 2500,
+    "actions": [
+      { "clickHasText": { "selector": "button.form-select", "text": "selecione" } },
+      { "wait": 700 },
+      { "clickHasText": { "selector": "button.w-100", "text": "11.222.333/0001-01" } },
+      { "wait": 6500 }
+    ] },
+
+  { "name": "03_add_widget", "url": "/visibilidade/templates/9b965ff9-c070-453a-9546-b21fc7ff3bb3", "settleMs": 2500,
+    "actions": [
+      { "clickHasText": { "selector": "button.form-select", "text": "selecione" } },
+      { "wait": 700 },
+      { "clickHasText": { "selector": "button.w-100", "text": "11.222.333/0001-01" } },
+      { "wait": 3000 },
+      { "scrollBottom": true },
+      { "wait": 500 },
+      { "clickButton": "Adicionar widget" },
+      { "wait": 1200 },
+      { "scrollTop": true }
+    ] },
+
+  { "name": "05_panel_filters", "url": "/visibilidade/templates/9b965ff9-c070-453a-9546-b21fc7ff3bb3", "settleMs": 2500,
+    "actions": [
+      { "clickHasText": { "selector": "button.form-select", "text": "selecione" } },
+      { "wait": 700 },
+      { "clickHasText": { "selector": "button.w-100", "text": "11.222.333/0001-01" } },
+      { "wait": 3000 },
+      { "clickText": "Adicionar filtro" },
+      { "wait": 1200 }
+    ] },
+
+  { "name": "06_aplicar_modal", "url": "/visibilidade/templates/9b965ff9-c070-453a-9546-b21fc7ff3bb3", "settleMs": 2500,
+    "actions": [
+      { "clickHasText": { "selector": "button.form-select", "text": "selecione" } },
+      { "wait": 700 },
+      { "clickHasText": { "selector": "button.w-100", "text": "11.222.333/0001-01" } },
+      { "wait": 3000 },
+      { "clickButton": "Aplicar a empresa" },
+      { "wait": 1800 }
+    ] },
+
+  { "name": "07_runs_list", "url": "/clientes/93d81af3-64e4-495a-b886-ffce2fdc8025/visibilidade/4822286c-b022-4ead-9f31-2157776ec5b1", "settleMs": 4000 },
+
+  { "name": "08_run_dashboard", "url": "/clientes/93d81af3-64e4-495a-b886-ffce2fdc8025/visibilidade/4822286c-b022-4ead-9f31-2157776ec5b1", "settleMs": 3500,
+    "actions": [ { "clickButton": "Abrir dashboard" }, { "wait": 7000 } ] },
+
+  { "name": "09_edit_inline", "url": "/clientes/93d81af3-64e4-495a-b886-ffce2fdc8025/visibilidade/4822286c-b022-4ead-9f31-2157776ec5b1", "settleMs": 3500,
+    "actions": [ { "clickButton": "Abrir dashboard" }, { "wait": 6000 }, { "clickButton": "Editar" }, { "wait": 3000 } ] },
+
+  { "name": "10_dados_tecnicos", "url": "/clientes/93d81af3-64e4-495a-b886-ffce2fdc8025/visibilidade/4822286c-b022-4ead-9f31-2157776ec5b1", "settleMs": 3500,
+    "actions": [ { "clickButton": "Abrir dashboard" }, { "wait": 6000 }, { "clickButton": "Visualizar dados técnicos" }, { "wait": 2500 } ] },
+
+  { "name": "11_customizar", "url": "/clientes/93d81af3-64e4-495a-b886-ffce2fdc8025/visibilidade/4822286c-b022-4ead-9f31-2157776ec5b1", "settleMs": 3500,
+    "actions": [ { "clickText": "Configurar e processar" }, { "wait": 4000 } ] },
+
+  { "name": "12_consulta_rapida", "url": "/clientes/93d81af3-64e4-495a-b886-ffce2fdc8025/consulta-rapida/4822286c-b022-4ead-9f31-2157776ec5b1", "settleMs": 4000 }
+]

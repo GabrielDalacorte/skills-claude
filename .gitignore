@@ -1,0 +1,6 @@
+# dependências instaladas localmente (rode `npm i playwright` em documentar-tela/scripts)
+node_modules/
+
+# artefatos de execução das skills (sessão, prints, jsons temporários)
+state.json
+*.png

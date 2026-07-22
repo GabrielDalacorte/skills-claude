@@ -1,0 +1,99 @@
+{
+  "title": "Visibilidade",
+  "subtitle": "Painéis dinâmicos no AFL Connect — Como funciona\nDo template da organização ao dashboard de cada empresa",
+  "dateline": "Guia com telas reais do ambiente — Julho 2026",
+  "image_width_in": 6.3,
+  "output": "D:\\AFL\\presentations\\Visibilidade_Como_Funciona.docx",
+  "intro": {
+    "heading": "O que é a Visibilidade",
+    "paragraphs": [
+      "A Visibilidade é o módulo de painéis (dashboards) dinâmicos do AFL Connect. Ela transforma os relatórios fiscais já processados de cada empresa (EFD, SPED, NF-e, CT-e, EFD-Contribuições, etc.) em indicadores, gráficos, tabelas e mapas — sem que o usuário precise mexer em planilha ou escrever consulta.",
+      "A ideia central é montar uma vez, aplicar em muitas empresas. O trabalho se divide em dois papéis:"
+    ],
+    "bullets": [
+      "Quem monta (organização): cria um Template — a planta do painel — e aplica esse template às empresas.",
+      "Quem consome (por empresa): abre o painel já pronto, navega pelos filtros interativos e, se quiser, ajusta widgets só para aquela empresa."
+    ]
+  },
+  "toc": [
+    "1. Templates de Visibilidade (lista, pastas e versões)",
+    "2. Editor de template — o canvas WYSIWYG",
+    "3. Aplicar um template às empresas",
+    "4. Visibilidade da empresa (histórico de runs)",
+    "5. O painel pronto (dashboard interativo)",
+    "6. Configurar a visibilidade por empresa",
+    "7. Consulta rápida",
+    "8. Glossário"
+  ],
+  "sections": [
+    { "level": 1, "heading": "1. Templates de Visibilidade",
+      "paragraphs": ["No menu Template → “Dashboard de visibilidade”. É a lista de todos os templates da organização; cada template é a planta de um painel."],
+      "bullets": [
+        "Pastas agrupam templates por tema (sem pasta = “Sem pasta”).",
+        "Versões (v1, v2…): cada alteração salva gera uma versão nova.",
+        "“Padrão da organização”: o template sugerido por toda a organização.",
+        "Ações no hover: Pré-visualizar e Aplicar a empresa."
+      ],
+      "figures": [ { "img": "01_templates_list.png", "caption": "Figura 1 — Lista de templates, em pastas, com versão e o selo “Padrão da organização”." } ] },
+
+    { "level": 1, "heading": "2. Editor de template — o canvas WYSIWYG",
+      "paragraphs": ["O editor visual: o que você monta é o que a empresa verá. A Empresa-modelo é obrigatória e serve só para trazer estrutura e prévias com números reais — cada empresa verá os próprios dados quando o template for aplicado."],
+      "figures": [ { "img": "02_editor_canvas.png", "caption": "Figura 2 — Editor com empresa-modelo selecionada; widgets renderizam prévias reais." } ] },
+
+    { "level": 2, "heading": "2.1. Adicionar widget",
+      "bullets": [
+        "Relatório — replica um relatório e recorta colunas e linhas.",
+        "Tabela dinâmica — cruza dimensões e métricas.",
+        "Gráfico — barras, linhas, pizza, área.",
+        "Indicador (KPI) — um número-chave em destaque.",
+        "Mapa de calor — intensidade por células.",
+        "Mapa (por UF) — distribuição pelos estados."
+      ],
+      "figures": [ { "img": "03_add_widget.png", "caption": "Figura 3 — Escolha do tipo de widget." } ] },
+
+    { "level": 2, "heading": "2.2. Filtros do painel",
+      "paragraphs": ["Filtros globais (Texto, Data, Período, Número) que recortam vários widgets ao mesmo tempo, no estilo Metabase/Power BI."],
+      "figures": [ { "img": "05_panel_filters.png", "caption": "Figura 4 — Tipos de filtro de painel." } ] },
+
+    { "level": 1, "heading": "3. Aplicar um template às empresas",
+      "paragraphs": ["“Aplicar a empresa” lista as empresas com a situação de cada uma (selecionável, “Substituirá: {template}” ou “Já aplicada”). Ao confirmar, dispara o processamento (um run) de cada empresa em segundo plano."],
+      "figures": [ { "img": "06_aplicar_modal.png", "caption": "Figura 5 — Aplicação do template a empresas." } ] },
+
+    { "level": 1, "heading": "4. Visibilidade da empresa (histórico de runs)",
+      "paragraphs": ["Dentro de um cliente, na aba Visibilidade, escolhe-se a empresa. Um run é uma execução do painel; a tela mostra o último run com sucesso e o histórico (data, status, origem, duração, relatórios)."],
+      "figures": [ { "img": "07_runs_list.png", "caption": "Figura 6 — Último run com sucesso e histórico de runs." } ] },
+
+    { "level": 1, "heading": "5. O painel pronto (dashboard interativo)",
+      "paragraphs": ["“Abrir dashboard” mostra o painel com os dados da empresa e uma barra de filtros interativos (Região, Tipo de operação, UF, Mês) que recorta todos os widgets ao mesmo tempo, sem reprocessar."],
+      "figures": [ { "img": "08_run_dashboard.png", "caption": "Figura 7 — Dashboard interativo: KPIs, gráficos, pizza e mapa de calor." } ] },
+
+    { "level": 2, "heading": "5.1. Edição inline",
+      "paragraphs": ["“Editar” liga o modo de edição sobre o painel do cliente: arrastar, redimensionar, editar, excluir e criar widgets. As alterações valem só para aquela empresa."],
+      "figures": [ { "img": "09_edit_inline.png", "caption": "Figura 8 — Modo de edição inline." } ] },
+
+    { "level": 2, "heading": "5.2. Dados técnicos",
+      "paragraphs": ["Resumo de transparência: velocidade, custo por atualização, consultas, linhas lidas e SQL por widget. (As métricas exibidas são simuladas para demonstração, conforme a própria tela indica.)"],
+      "figures": [ { "img": "10_dados_tecnicos.png", "caption": "Figura 9 — Dados técnicos do painel." } ] },
+
+    { "level": 1, "heading": "6. Configurar a visibilidade por empresa",
+      "paragraphs": ["“Configurar e processar” abre um editor de duas colunas para ajustar o painel de uma empresa sem alterar o template."],
+      "bullets": [
+        "Do template (N): widgets herdados; customizações recebem o selo “OV” (override).",
+        "Da empresa (N): widgets exclusivos daquela empresa, criados com “Add”."
+      ],
+      "figures": [ { "img": "11_customizar.png", "caption": "Figura 10 — Configuração por empresa." } ] },
+
+    { "level": 1, "heading": "7. Consulta rápida",
+      "paragraphs": ["Caminho avulso: montar uma visualização sobre um relatório da empresa sem criar template nem run. Se ficar útil, dá para “Salvar em uma visibilidade”."],
+      "figures": [ { "img": "12_consulta_rapida.png", "caption": "Figura 11 — Consulta rápida: escolha do tipo de visualização." } ] }
+  ],
+  "glossary": [
+    ["Template", "Planta reutilizável de um painel (widgets + layout + filtros), da organização. Versionada."],
+    ["Widget", "Cada peça do painel: KPI, gráfico, tabela dinâmica, mapa de calor, mapa por UF ou relatório."],
+    ["Canvas (WYSIWYG)", "A grade do editor onde os widgets são posicionados, com prévia ao vivo."],
+    ["Empresa-modelo", "Empresa usada só como exemplo no editor; cada empresa vê os próprios dados quando o template é aplicado."],
+    ["Run", "Uma execução do painel de uma empresa (sucesso, vazio, erro, processando)."],
+    ["Override (OV)", "Customização de um widget herdado, válida só para aquela empresa."],
+    ["Consulta rápida", "Visualização avulsa sobre um relatório da empresa, sem template nem run."]
+  ]
+}
