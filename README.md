@@ -21,7 +21,7 @@ skill (os browsers são globais, sem re-download pesado):
 
 ```bash
 cd documentar-tela/scripts && npm i --registry=https://registry.npmjs.org/ playwright
-cd evidenciar-pdf/scripts  && npm i --registry=https://registry.npmjs.org/ playwright
+cd evidenciar-pdf/scripts  && npm i --registry=https://registry.npmjs.org/
 ```
 
 O `--registry` público é necessário nas máquinas em que o `.npmrc` global aponta para o

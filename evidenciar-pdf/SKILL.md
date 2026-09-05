@@ -24,8 +24,9 @@ mudou e o print que prova**.
 
 1. **Chrome instalado** — os scripts usam `channel: chrome`. Nada de Word/LibreOffice: o
    PDF sai do próprio Chrome, então o layout é 100% CSS.
-2. **Playwright** (uma vez só):
-   `cd "<esta-pasta>/scripts" && npm i --registry=https://registry.npmjs.org/ playwright`
+2. **Dependências** (uma vez só) — Playwright (captura + impressão) e pdf-lib (junta a
+   capa com o miolo):
+   `cd "<esta-pasta>/scripts" && npm i --registry=https://registry.npmjs.org/`
    (o registry público é obrigatório nesta máquina — o `.npmrc` global aponta para o
    CodeArtifact da CG e dá `E401`).
 3. **App rodando** com o código da entrega. Se ainda não subiu, veja "Rodar local" abaixo.
@@ -92,7 +93,14 @@ edite **só esse arquivo**; nenhum hex fica solto no gerador. A logo é embutida
 base64, então o arquivo final é autocontido.
 
 Para depurar o layout sem abrir o PDF: `KEEP_HTML=1 node gerar_pdf.js ...` salva o HTML
-do lado, e dá para abri-lo no Chrome.
+do lado, e dá para abri-lo no Chrome. Para conferir o PDF **de verdade** (paginação,
+rodapé, o que caiu em cada página), rasterize as páginas em PNG e abra com o Read —
+`pypdfium2` + `pillow` fazem isso em três linhas. Só olhar o HTML esconde tudo que é
+específico de impressão.
+
+O rodapé do Chrome vale para o documento inteiro, e sobre a capa escura ele fica
+ilegível. Por isso o gerador imprime em duas passadas (`pageRanges` `1` e `2-`) e junta
+com o pdf-lib: capa sem rodapé, miolo com rodapé já numerado a partir de "2/N".
 
 ## Regras
 

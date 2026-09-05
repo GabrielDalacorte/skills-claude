@@ -29,6 +29,7 @@
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
+const { PDFDocument } = require('pdf-lib');
 
 const ROOT = path.resolve(__dirname, '..');
 const brand = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets', 'brand.json'), 'utf8'));
@@ -328,22 +329,50 @@ ${(spec.glossary || []).length ? `<section class="sec quebra">
   await page.setContent(html, { waitUntil: 'networkidle' });
 
   const rodape = `
-    <div style="width:100%;font-size:7.5pt;color:${brand.colors.muted};
+    <div style="width:100%;font-size:8.5pt;color:${brand.colors.secondary};
                 font-family:${brand.font.replace(/"/g, "'")};
                 padding:0 16mm;display:flex;justify-content:space-between;align-items:center;">
       <span>${esc(spec.title)}</span>
       <span>${esc(spec.client || brand.company)} &nbsp;&ndash;&nbsp; <span class="pageNumber"></span>/<span class="totalPages"></span></span>
     </div>`;
 
-  await page.pdf({
-    path: out,
+  const margem = { top: '18mm', bottom: '20mm', left: '0mm', right: '0mm' };
+
+  // Duas passadas e depois junta: o rodapé do Chrome vale para o documento inteiro, e
+  // sobre a capa (grafite) ele fica ilegível — cinza sobre escuro — e ainda repete o que
+  // a própria capa já diz. Então a capa sai sem rodapé e o miolo sai com.
+  // O `pageRanges` preserva a numeração original, então o miolo já começa em "2/N".
+  const capaPdf = await page.pdf({
     format: 'A4',
     printBackground: true,
-    displayHeaderFooter: true,
-    headerTemplate: '<div></div>',
-    footerTemplate: rodape,
-    margin: { top: '18mm', bottom: '20mm', left: '0mm', right: '0mm' },
+    pageRanges: '1',
+    displayHeaderFooter: false,
+    margin: margem,
   });
+
+  let miolo = null;
+  try {
+    miolo = await page.pdf({
+      format: 'A4',
+      printBackground: true,
+      pageRanges: '2-',
+      displayHeaderFooter: true,
+      headerTemplate: '<div></div>',
+      footerTemplate: rodape,
+      margin: margem,
+    });
+  } catch (e) {
+    // documento de uma página só (capa e nada mais) — o range "2-" não existe
+    miolo = null;
+  }
+
+  const final = await PDFDocument.create();
+  for (const buf of [capaPdf, miolo].filter(Boolean)) {
+    const src = await PDFDocument.load(buf);
+    const pages = await final.copyPages(src, src.getPageIndices());
+    pages.forEach((p) => final.addPage(p));
+  }
+  fs.writeFileSync(out, await final.save());
 
   await browser.close();
   const kb = (fs.statSync(out).size / 1024).toFixed(0);
