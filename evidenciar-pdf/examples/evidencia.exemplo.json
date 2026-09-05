@@ -1,0 +1,94 @@
+{
+  "title": "Permissões do Relatório de Tickets e da Aba Site",
+  "subtitle": "Evidências da entrega\nSistema de Controle de Acesso",
+  "client": "Supermercado Brunetto",
+  "tags": ["PER-102", "PER-103"],
+  "dateline": "setembro de 2026",
+
+  "intro": {
+    "heading": "O que foi solicitado",
+    "paragraphs": ["Dois pontos levantados sobre o controle de permissões da intranet:"],
+    "bullets": [
+      "**Permissão para o relatório dos tickets** — só era possível liberar o relatório liberando junto o cadastro de usuários da intranet. O ideal é que tivesse uma permissão separada.",
+      "**Aba Site** — incluir no controle de permissões para limitar o acesso, pois estava ocorrendo o mesmo que o item anterior."
+    ]
+  },
+
+  "summary": [
+    ["Item", "Situação"],
+    ["Permissão separada para o Relatório de tickets", "Entregue"],
+    ["Aba Site dentro do controle de permissões", "Entregue"]
+  ],
+
+  "sections": [
+    {
+      "heading": "1. Por que os dois itens aconteciam",
+      "paragraphs": [
+        "As duas telas estavam amarradas à mesma permissão, a do cadastro de usuários da intranet. Quem precisava só do relatório acabava recebendo também o cadastro de usuários e a aba Site inteira."
+      ],
+      "figures": [
+        { "img": "01_antes.png", "caption": "Figura 1 — A permissão que antes controlava também o relatório e a aba Site." }
+      ]
+    },
+    {
+      "heading": "2. Permissão própria do Relatório de tickets",
+      "paragraphs": [
+        "Foi criado um grupo novo na tela de Gerenciamento de Permissões. A partir de agora essa chave é a única coisa que o relatório exige, e pode ser concedida sozinha."
+      ],
+      "figures": [
+        { "img": "02_grupo_novo.png", "caption": "Figura 2 — Grupo novo \"Relatório de tickets\", concedido de forma isolada." }
+      ]
+    },
+    {
+      "heading": "3. Aba Site dentro do controle de permissões",
+      "paragraphs": [
+        "A aba Site passou a ter o seu próprio grupo, com duas chaves separadas:"
+      ],
+      "bullets": [
+        "**Visualizar aba Site** — libera a aba e a consulta das solicitações.",
+        "**Editar solicitações da aba Site** — libera os botões que mudam o status."
+      ],
+      "figures": [
+        { "img": "03_grupo_site.png", "caption": "Figura 3 — Grupo novo \"Site\", separando quem consulta de quem altera." }
+      ]
+    },
+    {
+      "heading": "4. Prova da separação",
+      "paragraphs": [
+        "Dois usuários de teste, cada um com apenas uma das permissões novas e nenhum acesso ao cadastro de usuários. O primeiro enxerga só o Relatório de tickets — cenário que antes não era possível montar."
+      ],
+      "figures": [
+        { "img": "04_menu_so_relatorio.png", "caption": "Figura 4 — Só a permissão do relatório: sem cadastro de usuários e sem a aba Site." }
+      ]
+    },
+    {
+      "heading": "4.1 O caso oposto",
+      "level": 2,
+      "paragraphs": [
+        "O segundo usuário recebeu somente a permissão da aba Site: enxerga as três telas do Site e nada do relatório, confirmando que as permissões são independentes."
+      ],
+      "figures": [
+        { "img": "05_menu_so_site.png", "caption": "Figura 5 — Só a permissão da aba Site: sem o relatório e sem o cadastro de usuários." }
+      ]
+    },
+    {
+      "heading": "5. Para colocar no ar",
+      "bullets": [
+        "**Ninguém perde acesso.** Quem já enxergava as telas continua enxergando; as permissões novas foram preenchidas a partir do que cada usuário já tinha.",
+        "**O bloqueio agora é de verdade.** Além de esconder o item do menu, o sistema recusa o acesso no servidor."
+      ],
+      "note": {
+        "type": "alerta",
+        "title": "É preciso sair e entrar de novo",
+        "text": "As permissões são carregadas no login, então quem estiver com a sessão aberta só vê a mudança depois de fazer login novamente."
+      }
+    }
+  ],
+
+  "glossary": [
+    ["Permissão", "chave que libera uma tela ou uma ação para um usuário."],
+    ["Aba Site", "seção do menu com as solicitações recebidas pelo site."]
+  ],
+
+  "output": "D:/PersonalizeIT/2024/Brunetto/Controle de Acesso/Evidencias_Permissoes_Relatorio_e_Site.pdf"
+}

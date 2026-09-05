@@ -1,0 +1,46 @@
+{
+  "_fonte": "Valores oficiais do Brand Book da PersonalizeIT (D:/PersonalizeIT/2026/Discord/.maestro/notas/marca.md). Não invente cor nem fonte — edite aqui.",
+
+  "company": "PersonalizeIT",
+
+  "font": "\"Cyntho Next\", -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "_fontNota": "Cyntho Next é comercial (licença desktop ≠ webfont). Os .ttf NÃO são versionados: o gerador procura os caminhos abaixo na máquina e, se não achar, cai no fallback da stack sem quebrar.",
+  "fontFiles": {
+    "400": "D:/PersonalizeIT/2026/LP/personalizeit-lp/astro-app/public/wp-content/uploads/2025/09/CynthoNextRegular.ttf",
+    "500": "D:/PersonalizeIT/2026/LP/personalizeit-lp/astro-app/public/wp-content/uploads/2025/09/CynthoNextMedium.ttf",
+    "600": "D:/PersonalizeIT/2026/LP/personalizeit-lp/astro-app/public/wp-content/uploads/2025/09/CynthoNextSemiBold.ttf",
+    "700": "D:/PersonalizeIT/2026/LP/personalizeit-lp/astro-app/public/wp-content/uploads/2025/09/CynthoNextBold.ttf"
+  },
+
+  "logo": "personalizeit-wordmark.svg",
+  "logoSymbol": "personalizeit-simbolo.png",
+
+  "_paletaNota": "A marca é dark-first: grafite é a base (~70%) e o laranja é ACENTO, no máximo ~10% da composição. Por isso a capa é grafite e o miolo é papel branco com laranja só em título, marcador e cabeçalho de tabela — nunca área chapada de laranja.",
+
+  "cover": {
+    "bg": "#21222B",
+    "bgSoft": "#2C2D38",
+    "text": "#FFFFFF",
+    "accent": "#EA4100"
+  },
+
+  "colors": {
+    "primary": "#EA4100",
+    "primaryDark": "#C73700",
+    "secondary": "#21222B",
+    "text": "#21222B",
+    "muted": "#6B6C75",
+    "line": "#E3E3E6",
+    "surface": "#F6F6F7",
+    "ok": "#2E7D46",
+    "warn": "#C73700"
+  },
+
+  "_coresDark": {
+    "_nota": "Equivalentes oficiais para fundo escuro. Não use no miolo branco: perdem contraste.",
+    "muted": "#AAABB3",
+    "line": "#51525A",
+    "ok": "#7BD88F",
+    "warn": "#FF8A80"
+  }
+}

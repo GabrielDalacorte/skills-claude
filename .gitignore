@@ -4,3 +4,7 @@ node_modules/
 # artefatos de execução das skills (sessão, prints, jsons temporários)
 state.json
 *.png
+
+# a logo da marca é parte da skill evidenciar-pdf, não é artefato de execução
+!evidenciar-pdf/assets/*.png
+!evidenciar-pdf/assets/*.svg

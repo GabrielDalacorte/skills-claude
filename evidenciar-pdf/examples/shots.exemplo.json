@@ -1,0 +1,60 @@
+{
+  "base": "http://localhost:3050",
+  "login": {
+    "path": "/login",
+    "emailSel": "input[placeholder='Digite seu email']",
+    "passSel": "input[placeholder='Digite sua senha']",
+    "btn": "button:has-text('Fazer Login')"
+  },
+  "users": {
+    "admin": { "email": "dev@local.test", "pass": "Local@2026" },
+    "so_relatorio": { "email": "ana.souza@brunetto.local", "pass": "Local@2026" },
+    "so_site": { "email": "carlos.pereira@brunetto.local", "pass": "Local@2026" }
+  },
+  "shots": [
+    {
+      "name": "01_antes",
+      "as": "admin",
+      "url": "/user/admin/permissions",
+      "actions": [
+        { "clickHasText": { "selector": "div.cursor-pointer", "text": "Cadastro de usuário" } }
+      ]
+    },
+    {
+      "name": "02_grupo_novo",
+      "as": "admin",
+      "url": "/user/admin/permissions",
+      "actions": [
+        { "clickHasText": { "selector": "div.cursor-pointer", "text": "Relatório de tickets" } },
+        { "scrollIn": "div.overflow-y-auto" }
+      ]
+    },
+    {
+      "name": "03_grupo_site",
+      "as": "admin",
+      "url": "/user/admin/permissions",
+      "actions": [
+        { "clickHasText": { "selector": "div.cursor-pointer", "text": "Site", "last": true } },
+        { "scrollIn": "div.overflow-y-auto" }
+      ]
+    },
+    {
+      "name": "04_menu_so_relatorio",
+      "as": "so_relatorio",
+      "url": "/",
+      "actions": [
+        { "hover": "aside" },
+        { "expandAll": "aside button" }
+      ]
+    },
+    {
+      "name": "05_menu_so_site",
+      "as": "so_site",
+      "url": "/",
+      "actions": [
+        { "hover": "aside" },
+        { "expandAll": "aside button" }
+      ]
+    }
+  ]
+}
