@@ -1,6 +1,6 @@
 ---
 name: filmar-produto
-description: Faz um VÍDEO animado de um sistema web que está RODANDO — fotografa as telas reais via Playwright em 3x e anima por cima com Remotion (React que renderiza vídeo), gerando um .mp4 1080p com câmera, legendas editoriais, marcadores e contadores. Use quando o Gabriel pedir "fazer um vídeo do sistema", "vídeo com animações/Remotion", "vídeo-pitch", "demo animada do produto", "vídeo pra landing page", "teaser do app", "gravar a tela com animação". NÃO é a skill `documentar-tela` (aquela é guia .docx com prints estáticos) nem a `evidenciar-pdf` (PDF de evidências) — esta gera VÍDEO.
+description: Faz um VÍDEO animado de um sistema web que está RODANDO — fotografa as telas reais via Playwright em 3x e anima por cima com Remotion (React que renderiza vídeo), gerando um .mp4 1080p com câmera, legendas editoriais, marcadores e contadores. Use quando o Gabriel pedir "fazer um vídeo do sistema", "vídeo com animações/Remotion", "vídeo-pitch", "demo animada do produto", "vídeo pra landing page", "teaser do app", "gravar a tela com animação". NÃO é a skill `documentar-tela` (aquela é guia .docx com prints estáticos) nem a `evidenciar-personalizeit` (PDF de evidências) — esta gera VÍDEO.
 ---
 
 # Filmar produto — vídeo-pitch com telas reais + Remotion

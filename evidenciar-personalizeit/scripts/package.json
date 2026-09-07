@@ -1,5 +1,5 @@
 {
-  "name": "evidenciar-pdf-scripts",
+  "name": "evidenciar-personalizeit-scripts",
   "private": true,
   "dependencies": {
     "pdf-lib": "^1.17.1",
