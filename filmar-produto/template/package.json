@@ -1,0 +1,25 @@
+{
+  "name": "video-pitch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vídeo-pitch — telas reais do produto, animadas com Remotion.",
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "remotion render Pitch out/pitch.mp4 --concurrency=4",
+    "preview": "remotion render Pitch out/preview.mp4 --scale=0.5 --concurrency=4 --log=error",
+    "web": "ffmpeg -y -i out/pitch.mp4 -c:v libx264 -crf 23 -preset slow -pix_fmt yuv420p -movflags +faststart -an out/pitch-web.mp4",
+    "still": "remotion still Pitch out/capa.png"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.416",
+    "@remotion/fonts": "4.0.416",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.416"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.0",
+    "typescript": "5.8.3"
+  }
+}
