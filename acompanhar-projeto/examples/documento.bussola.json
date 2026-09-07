@@ -1,0 +1,132 @@
+{
+  "_comentario": [
+    "Documento de acompanhamento da Bússola Tributária — o exemplo de referência.",
+    "Repare no que faz este documento funcionar:",
+    "  · a manchete é o PRODUTO, não a agência; nenhum logo aparece;",
+    "  · os tokens abaixo são os do próprio app (theme.css), então o documento",
+    "    parece ter saído de dentro dele;",
+    "  · a parte 'Hoje temos' mostra, com tela real, o que já está de pé;",
+    "  · a parte seguinte declara uma limitação em vez de escondê-la — é o que",
+    "    faz o resto do documento ser levado a sério;",
+    "  · todo número citado veio de uma execução que existe no banco.",
+    "As imagens vieram do capturar.py da skill filmar-produto. As larguras de",
+    "figura (74 e 78) foram ajustadas MEDINDO o PDF: a 82% sobrava um quarto de",
+    "folha em branco no pé de cada página."
+  ],
+
+  "produto": "Bússola Tributária",
+  "assinatura": "AFL Consultores",
+  "tipo": "Documento de acompanhamento",
+  "subtitulo": "Onde estamos e o que vem a seguir",
+  "abertura": "A Bússola Tributária varre as fontes oficiais e a imprensa econômica todo dia, separa o que tem efeito tributário e entrega um clipping único em PDF, por e-mail, antes do expediente. Este documento mostra **o que já está de pé** — com imagens das telas reais — e **o que ainda falta**, incluindo uma limitação de hoje que preferimos declarar a esconder.",
+
+  "tokens": {
+    "papel": "#f4f5f0",
+    "realce": "#e7eae1",
+    "tinta": "#141a17",
+    "tinta2": "#454f49",
+    "tinta3": "#6b746e",
+    "filete": "#c5cbbe",
+    "forte": "#141a17",
+    "alerta": "#b45309"
+  },
+
+  "partes": [
+    {
+      "titulo": "Hoje temos",
+      "itens": [
+        {
+          "num": "01",
+          "titulo": "A porta de entrada",
+          "blocos": [
+            { "p": "A tela de acesso apresenta o produto pelo que ele é: um clipping. O expediente lista as frentes varridas e como cada uma é lida — leitura direta do Diário Oficial, página pública, navegador, colagem manual e feeds." },
+            { "figura": { "img": "01-login.png", "legenda": "Tela de acesso, em modo claro.", "largura": 74 } }
+          ]
+        },
+        {
+          "num": "02",
+          "titulo": "Agentes: os pipelines cadastrados",
+          "blocos": [
+            { "p": "Cada agente combina fontes, parâmetros, um modelo e um horário. A lista mostra só o que se lê de relance — agente, cliente, agendamento e estado — agrupado pela recorrência." },
+            { "figura": { "img": "02-agentes.png", "legenda": "Os agentes cadastrados, agrupados por recorrência. O clipping diário roda às 06:00, de segunda a sexta.", "largura": 74 } }
+          ]
+        },
+        {
+          "num": "03",
+          "titulo": "A execução, passo a passo",
+          "blocos": [
+            { "p": "O pipeline é declarado, não programado: o motor percorre os passos e registra o que fez em cada corte. O diagrama mostra onde o fluxo abre, onde fecha e quanto passa em cada peneira." },
+            { "p": "Na execução de 27 de agosto: **17 fontes** varridas em paralelo, **259 itens** coletados, 43 fora da janela de tempo, 129 sem palavra-chave, 16 repetidos — **71 itens** chegaram à triagem e **50** entraram no clipping." },
+            { "figura": { "img": "06-execucao-flow.png", "legenda": "Orquestração da execução do dia 27 de agosto. Uma das fontes não respondeu; as outras dezesseis seguiram.", "largura": 78 } }
+          ]
+        },
+        {
+          "num": "04",
+          "titulo": "O resultado, na tela e em PDF",
+          "blocos": [
+            { "p": "O material fica pronto na própria execução — resumo executivo, destaques por tema e a fonte de cada item — e sai também como PDF para anexar no e-mail." },
+            { "figura": { "img": "05-execucao-resultado.png", "legenda": "Resultado da execução, com o resumo executivo escrito pelo modelo.", "largura": 74 } }
+          ]
+        },
+        {
+          "num": "05",
+          "titulo": "O catálogo de fontes",
+          "blocos": [
+            { "p": "As fontes são cadastradas uma vez e reaproveitadas por quantos agentes quiser. Cada endereço foi testado respondendo antes de entrar no catálogo." },
+            { "figura": { "img": "09-fontes.png", "legenda": "Catálogo compartilhado de fontes, agrupado por modo de coleta.", "largura": 74 } }
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "O que vamos fazer ainda",
+      "respiro": true,
+      "itens": [
+        {
+          "num": "A",
+          "titulo": "Testar a fundo se as informações estão vindo completas",
+          "blocos": [
+            {
+              "boxe": {
+                "rotulo": "Limitação de hoje",
+                "tipo": "alerta",
+                "texto": "**O agente decide pelo título e pelo resumo, não pelo texto da notícia.** O coletor de feeds faz uma requisição ao endereço do feed e não abre o link da matéria. Quando o feed não traz o corpo, o corpo fica vazio — e a triagem julga com o que tem."
+              }
+            },
+            { "p": "Medimos numa execução real: dos itens coletados, cerca de metade foi descartada por palavra-chave **sem que o corpo tivesse sido lido**. Não sabemos quantos desses eram relevantes, e é exatamente isso que a próxima etapa vai medir." },
+            {
+              "tabela": {
+                "estreita": true,
+                "cabecalho": ["O que falta", "Situação"],
+                "linhas": [
+                  ["Abrir o link da matéria e ler o texto", "planejado"],
+                  ["Separar o filtro em dois — antes e depois da leitura", "planejado"],
+                  ["Ler PDF (pautas do STJ)", "planejado"],
+                  ["Medir o que a triagem está perdendo", "em andamento"]
+                ]
+              }
+            },
+            { "p": "A primeira tarefa é uma **medição**, e ela não chama modelo nenhum — custa US$ 0,00. Só depois de saber o tamanho do problema é que se decide quanto vale gastar para resolvê-lo." }
+          ]
+        },
+        {
+          "num": "B",
+          "titulo": "Enriquecer o que sabemos de cada cliente",
+          "blocos": [
+            { "p": "A ideia é que o clipping de cada cliente seja compilado à luz do que interessa _àquele_ cliente — as leis que ele acompanha, o setor em que atua, os temas comerciais em jogo." },
+            {
+              "boxe": {
+                "rotulo": "O que já existe",
+                "texto": "A estrutura está pronta: cada cliente já pode ter escopos de interesse cadastrados, e o prompt de compilação já é sobrescrevível por cliente. Não é preciso construir do zero."
+              }
+            },
+            { "p": "O que falta é o dado. O caminho, então, não é técnico: é **de cadastro** — setor de atuação, leis e temas que o cliente acompanha, e o que a AFL quer destacar comercialmente para ele. A tubulação já está no lugar; falta a água." }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "rodape": "Bússola Tributária · AFL Consultores · documento gerado a partir das telas e dos dados reais da aplicação.",
+  "saida": "D:/AFL/afl-bussola/bussula-tributaria/Acompanhamento_Bussola.pdf"
+}
