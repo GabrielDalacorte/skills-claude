@@ -1,9 +1,9 @@
 ---
-name: evidenciar-pdf
-description: Gera um PDF de EVIDÊNCIAS com a identidade visual da PersonalizeIT (capa com logo, cores da marca, prints reais do sistema, legendas, tabelas e observações). Use SEMPRE que o Gabriel pedir para "evidenciar com PDF", "gerar um PDF com a evidência", "montar as evidências disso", "criar um PDF com imagens/prints", "documento de comprovação para o cliente" ou algo do tipo — inclusive quando ele só disser "evidencia isso aí em PDF" logo depois de uma entrega. NÃO é a skill `documentar-tela` (aquela é o guia "Como funciona" em .docx) nem a `documentar` (spec/resolução por ID de tarefa, sem prints).
+name: evidenciar-personalizeit
+description: Gera um PDF de EVIDÊNCIAS com a identidade visual da PersonalizeIT (capa com logo, cores da marca, prints reais do sistema, legendas, tabelas e observações). Use SEMPRE que o Gabriel pedir para "evidenciar com PDF", "gerar um PDF com a evidência", "montar as evidências disso", "criar um PDF com imagens/prints", "documento de comprovação para o cliente" ou algo do tipo — inclusive quando ele só disser "evidencia isso aí em PDF" logo depois de uma entrega. NÃO é a skill `documentar-tela` (aquela é o guia "Como funciona" em .docx), nem a `documentar` (spec/resolução por ID de tarefa, sem prints), nem a `acompanhar-projeto` (documento de status com a marca do PRÓPRIO produto, sem logo de agência).
 ---
 
-# Evidenciar PDF — comprovação visual da entrega
+# Evidenciar (PersonalizeIT) — comprovação visual da entrega
 
 Produz um PDF que **prova** que o que foi pedido está funcionando: capa com a logo da
 PersonalizeIT, prints reais do sistema rodando, legenda em cada figura e uma seção final
@@ -15,7 +15,8 @@ Diferença para as skills irmãs:
 |---|---|---|
 | `documentar` | spec ou resolução em texto, por ID | planejar ou registrar como resolveu |
 | `documentar-tela` | guia "Como funciona" (.docx) | ensinar alguém a usar uma tela |
-| **`evidenciar-pdf`** | **PDF de evidências (.pdf)** | **comprovar que a entrega está feita** |
+| `acompanhar-projeto` | PDF de acompanhamento, marca do produto | dizer onde o projeto está e o que vem |
+| **`evidenciar-personalizeit`** | **PDF de evidências, marca da PersonalizeIT** | **comprovar que a entrega está feita** |
 
 O tom é de comprovação, não de tutorial: cada seção mostra **o que foi pedido, o que
 mudou e o print que prova**.
