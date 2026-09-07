@@ -96,6 +96,13 @@ Schema completo no cabeçalho de `scripts/gerar_pdf.py`; exemplo real e comentad
 Sobre o texto: lide curto explica **para que serve**, não onde clicar. Legenda diz **o que
 olhar** ("Os agentes agrupados por recorrência"), não o que a tela é ("Tela de agentes").
 
+**A parte do que falta é TABELA, não prosa.** Aprendido na marra: numa revisão eu reescrevi
+essa seção em parágrafos, e as pendências continuavam lá — só que ninguém as via. O dono do
+produto abre o documento e procura a tabela. Três colunas funcionam melhor que duas:
+`o que falta · depende de · situação`, porque metade das pendências não é trabalho parado —
+é decisão de quem paga, ou um dia com a notícia certa, e a coluna do meio diz isso sem
+precisar de parágrafo.
+
 ### 6. Gerar
 
 ```bash
